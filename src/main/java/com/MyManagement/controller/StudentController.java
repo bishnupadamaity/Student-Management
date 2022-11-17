@@ -64,4 +64,13 @@ public class StudentController {
         studentService.updateStudent(existingStudent);
         return "redirect:/students";
     }
+    @GetMapping("/students/delete/{id}")
+    public String deleteStudent(@PathVariable Long id){
+        try{
+            studentService.deleteStudent(id);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return "redirect:/students";
+    }
 }

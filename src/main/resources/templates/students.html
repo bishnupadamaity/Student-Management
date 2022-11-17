@@ -56,12 +56,12 @@
         </thead>
         <tbody>
         <tr th:each = "student:${students}">
-            <th scope="row">1</th>
+            <td></td>
             <td th:text = "${student.firstName}"></td>
             <td th:text = "${student.lastName}"></td>
             <td th:text = "${student.email}"></td>
             <td>
-                <a href="" class="btn btn-sm btn-warning">Update</a>
+                <a th:href="@{/students/edit/{id}(id=${student.id})}" class="btn btn-sm btn-warning">Update</a>
                 <a href="" class="btn btn-sm btn-danger">Delete</a>
             </td>
         </tr>

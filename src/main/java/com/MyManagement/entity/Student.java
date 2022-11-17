@@ -7,17 +7,21 @@ import javax.persistence.*;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
+    @Column(name = "first_name",nullable = false)
     private String firstName;
+    @Column(name = "last_name")
     private String lastName;
+    @Column(name = "regd_no",nullable = false)
     private String rollNo;
+    @Column(name = "email",nullable = false)
     private String email;
     private String mobile;
 
     public Student() {
     }
 
-    public Student(int id, String firstName, String lastName, String rollNo, String email, String mobile) {
+    public Student(Long id, String firstName, String lastName, String rollNo, String email, String mobile) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -26,11 +30,11 @@ public class Student {
         this.mobile = mobile;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
